@@ -6,9 +6,9 @@ module HomeHelper
 		Net::POP3.start('pop.gmail.com', 995, ENV["email"],ENV["auth"]) do |pop|
     
 		if pop.mails.empty?
-			puts "No new mail!"
+			"No new mail!"
 		else
-			puts "#{pop.mails.length} new messages"
+			"#{pop.mails.length} new messages"
 			
 		end
 	 end   
