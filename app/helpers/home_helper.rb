@@ -11,7 +11,7 @@ module HomeHelper
 			"#{pop.mails.length} new messages"
 			
 			pop.mails.each do |mail|
-			mail.header
+			mail.pop
 			end
 		end
 	 end   
