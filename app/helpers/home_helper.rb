@@ -1,7 +1,7 @@
 module HomeHelper
 	def account_login
 		require 'net/imap'
-		imap = Net::IMAP.new('imap.gmail.com')
+		imap = Net::IMAP.new('imap.gmail.com', 993)
 
 		imap.login(ENV['email'], ENV['password'])
 
