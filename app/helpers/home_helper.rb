@@ -12,10 +12,8 @@ module HomeHelper
 
 			 "Downloading..."
 		 
-			 pop.mails.each_with_index do|m,i|
-				 File.open("inbox/#{i}") do|f|
-				   f.write m.pop
-			 end
+			 pop.mails.for_each do|f|
+				f
 			end
 		end
 	 end   
