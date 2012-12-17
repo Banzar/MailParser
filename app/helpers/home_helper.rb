@@ -7,11 +7,10 @@ module HomeHelper
 
 		if pop.mails.empty?
 			"No new mail!"
-		else
-			"#{pop.mails.length} new messages"
-			
-			pop.mails.each do |mail|
-			mail.inspect
+		else			
+			pop.each_mail do |mail|
+			"#{mail.header}"
+			"#{mail.pop}"
 			end
 		end
 	 end   
