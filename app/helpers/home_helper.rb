@@ -5,9 +5,9 @@ module HomeHelper
 		Net::POP3.enable_ssl(OpenSSL::SSL::VERIFY_NONE)  
 		#Net::POP3.start('pop.gmail.com', 995, ENV["email"],ENV["auth"]) do |pop|
     
-		pop = Net::POP3.new('pop.gmail.com', 995, ENV["email"], ENV["auth"]
+		pop = Net::POP3.new('pop.gmail.com', 995)
 
-		pop.start
+		pop.start(ENV["email"], ENV["auth"])
 
 		if pop.mails.empty?
 			"No new mail!"
