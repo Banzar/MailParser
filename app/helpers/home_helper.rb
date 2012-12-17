@@ -9,11 +9,9 @@ module HomeHelper
 			"No new mail!"
 		else
 			"#{pop.mails.length} new messages"
-
-			 "Downloading..."
-		 
-			 pop.mails.for_each do|f|
-				f
+			
+			pop.mails.each do |mail|
+			mail.from
 			end
 		end
 	 end   
