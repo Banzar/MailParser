@@ -6,17 +6,13 @@ module HomeHelper
 		Net::POP3.start('pop.gmail.com', 995, ENV["email"], ENV["auth"]) do |pop|
 
 			if pop.mails.empty?
-			"No new mail!"
-			else			
-			"#{pop.mails.length} new mails."
+				"No new mail!"
+			else
+				pop.each_mail do |msg|
+					"#{msg.header}"
+					"#{msg.pop}"
+				end
 			end
 		end   
-	end
-
-	def get_mail
-		pop.mails.each do |msg|
-			"#{msg.header}"
-			"#{msg.pop}"
-		end
 	end
 end
