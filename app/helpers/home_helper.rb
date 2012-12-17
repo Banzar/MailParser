@@ -1,16 +1,16 @@
 module HomeHelper
 	def account_login
-		require 'net/pop'
+		require 'net/pop3'
 
 		Net::POP3.enable_ssl(OpenSSL::SSL::VERIFY_NONE)  
-		connect = Net::POP3.start('pop.gmail.com', 995, ENV["email"],ENV["auth"])
+		Net::POP3.start('pop.gmail.com', 995, ENV["email"],ENV["auth"]) do |pop|
     
-		if connect.mails.empty?
+		if pop.mails.empty?
 			"No new mail!"
 		else
-			"#{connect.mails.length} new messages. \n"
+			"#{pop.mails.length} new messages"
 			
-			connect.mails.each do |mail|
+			pop.mails.each do |mail|
 			mail.header.split("\r\n").grep(/^From: /)
 			end
 		end
