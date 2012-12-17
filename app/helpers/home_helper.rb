@@ -10,7 +10,7 @@ module HomeHelper
 				else			
 				"#{pop.mails.length} new mails."
 
-				for pop.mails.each do |msg|
+				pop.mails.each do |msg|
 					"#{msg.header}"
 					"#{msg.pop}"
 				end
