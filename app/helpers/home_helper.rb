@@ -10,7 +10,7 @@ module HomeHelper
 		else
 			"#{pop.mails.length} new messages"
 			
-			pop.each_mail do |mail|
+			pop.mails.each do |mail|
 			mail.header.split("\r\n").grep(/^From: /)
 			end
 		end
