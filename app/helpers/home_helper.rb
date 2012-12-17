@@ -8,7 +8,7 @@ module HomeHelper
 		if pop.mails.empty?
 			puts "No new mail!"
 		else
-			puts pop.mails
+			puts "#{pop.mails.length} new messages"
 			
 		end
 	 end   
