@@ -1,7 +1,7 @@
 module HomeHelper
 	def account_login
 		require 'net/pop'
-		pop = Net::POP3.new('pop.gmail.com', 993)
+		pop = Net::POP3.new('pop.gmail.com', 995)
 
 		pop.start(ENV['email'], ENV['password'])
 
