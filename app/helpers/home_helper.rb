@@ -10,7 +10,7 @@ module HomeHelper
 		else
 			"#{pop.mails.length} new messages"
 			
-			pop.mails.for_each do |mail|
+			pop.each_mail do |mail|
 			mail
 			end
 		end
