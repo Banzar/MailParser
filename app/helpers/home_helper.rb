@@ -9,8 +9,10 @@ module HomeHelper
 				"No new mail!"
 			else
 				pop.each_mail do |msg|
-					"#{msg.header}"
-					"#{msg.pop}"
+					if msg.header.includes?('3212165362')
+						"#{msg.header}"
+						"#{msg.pop}"
+					end
 				end
 			end
 		end   
