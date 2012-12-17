@@ -3,14 +3,14 @@ module HomeHelper
 		require 'net/pop'
 
 		Net::POP3.enable_ssl(OpenSSL::SSL::VERIFY_NONE)  
-		Net::POP3.start('pop.gmail.com', 995, ENV["email"],ENV["auth"]) do |pop|
+		connect = Net::POP3.start('pop.gmail.com', 995, ENV["email"],ENV["auth"])
     
-		if pop.mails.empty?
+		if connect.mails.empty?
 			"No new mail!"
 		else
-			"#{pop.mails.length} new messages"
+			"#{connect.mails.length} new messages. \n"
 			
-			pop.mails.each do |mail|
+			connect.mails.each do |mail|
 			mail.header.split("\r\n").grep(/^From: /)
 			end
 		end
