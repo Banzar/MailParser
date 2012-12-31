@@ -8,11 +8,7 @@ module HomeHelper
 				"There is no new mail!"
 			else
 				pop.mails.each do |msg|
-					if msg.include?('3212165362')
-						msg.pop do |chunk|
-							"#{chunk} \n"
-						end
-					end
+					puts msg.all
 				end
 			end
 		end   
