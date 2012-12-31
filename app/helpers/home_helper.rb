@@ -9,7 +9,7 @@ module HomeHelper
 			else
 				pop.each_mail do |msg|
 					if msg.pop.include?('3212165362')
-						"#{msg.pop}"
+						"#{msg.mail}"
 					end
 				end
 			end
