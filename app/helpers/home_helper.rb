@@ -10,7 +10,7 @@ module HomeHelper
 				pop.each_mail do |msg|
 					if msg.pop.include?('3212165362')
 						msg.pop do |chunk|
-							"#{chunk}"
+							chunk + "\n"
 						end
 					end
 				end
