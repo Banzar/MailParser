@@ -7,7 +7,7 @@ module HomeHelper
 			if pop.mails.empty?
 				"There is no new mail!"
 			else
-				pop.mails.each do |msg|
+				pop.mails do |msg|
 					msg.mail
 				end
 			end
