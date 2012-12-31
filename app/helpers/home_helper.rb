@@ -4,12 +4,11 @@ module HomeHelper
 
 		Net::POP3.enable_ssl(OpenSSL::SSL::VERIFY_NONE)  
 		Net::POP3.start('pop.gmail.com', 995, ENV["email"], ENV["auth"]) do |pop|
-
 			if pop.mails.empty?
 				"There is no new mail!"
 			else
 				pop.each_mail do |msg|
-					if msg.include?('3212165362')
+					if msg.pop.include?('3212165362')
 						"#{msg.pop}"
 					end
 				end
